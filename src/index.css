@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Editorial palette — ivory, ink, champagne */
+    --background: 38 33% 96%;
+    --foreground: 25 18% 12%;
+
+    --card: 38 33% 98%;
+    --card-foreground: 25 18% 12%;
+
+    --popover: 38 33% 98%;
+    --popover-foreground: 25 18% 12%;
+
+    --primary: 25 18% 12%;
+    --primary-foreground: 38 33% 96%;
+
+    --secondary: 36 22% 90%;
+    --secondary-foreground: 25 18% 12%;
+
+    --muted: 36 18% 92%;
+    --muted-foreground: 25 10% 40%;
+
+    --accent: 36 38% 55%;
+    --accent-foreground: 25 18% 12%;
+
+    --gold: 36 45% 52%;
+    --gold-soft: 36 50% 78%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 38 33% 96%;
+
+    --border: 30 15% 85%;
+    --input: 30 15% 85%;
+    --ring: 36 38% 55%;
+
+    --radius: 0.25rem;
+
+    --gradient-warm: linear-gradient(135deg, hsl(38 33% 96%), hsl(36 30% 88%));
+    --gradient-ink: linear-gradient(180deg, transparent, hsl(25 18% 8% / 0.85));
+    --shadow-soft: 0 20px 60px -20px hsl(25 18% 12% / 0.18);
+    --shadow-elegant: 0 30px 80px -30px hsl(36 38% 30% / 0.35);
+    --transition-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 38 33% 96%;
+    --sidebar-foreground: 25 18% 12%;
+    --sidebar-primary: 25 18% 12%;
+    --sidebar-primary-foreground: 38 33% 96%;
+    --sidebar-accent: 36 22% 90%;
+    --sidebar-accent-foreground: 25 18% 12%;
+    --sidebar-border: 30 15% 85%;
+    --sidebar-ring: 36 38% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .tracking-eyebrow {
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+}
+
+@layer utilities {
+  .fade-up {
+    animation: fadeUp 1s var(--transition-smooth) both;
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .ken-burns {
+    animation: kenBurns 18s ease-in-out infinite alternate;
+  }
+  @keyframes kenBurns {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+  }
+}
